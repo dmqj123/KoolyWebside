@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,16 @@
     <style>
         body{
             background-color: black;
+            background: linear-gradient(to bottom, blue, black);
         }
-        #menu{
+        #menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5%;
+            background-color: rgb(170, 235, 255);
+            z-index: 1000;
             margin-bottom: 100px;
         }
         .title{
@@ -16,68 +24,114 @@
             text-decoration: none;
             color: white;
             position: relative; 
-            transform: translateY(-30px);
+            transform: translateY(-25px);
         }
 
         .donate-link {
-        
-        background-color: red;
-        color: white; /* 白色文字 */
-        padding: 15px 32px; /* 内边距 */
-        text-align: center; /* 文字居中 */
-        text-decoration: none; /* 去掉下划线 */
-        display: inline-block; /* 行内块元素 */
-        font-size: 16px; /* 字体大小 */
-        cursor: pointer; /* 鼠标悬停时显示手型 */
-        margin-left: auto;
-        border-radius: 10px;
-        }
-
-        .donate-link:hover {
-        background-color: #45a049; /* 鼠标悬停时的背景颜色 */
-        }
-
-        .download{
-            background-color: white; 
-            color: black; 
-            padding: 15px 32px; /* 内边距 */
+            background-color: red;
+            color: white; /* 白色文字 */
+            padding: 9px 21px; /* 内边距 */
             text-align: center; /* 文字居中 */
             text-decoration: none; /* 去掉下划线 */
             display: inline-block; /* 行内块元素 */
-            font-size: 16px; /* 字体大小 */
-            margin: 4px 20px; /* 外边距 */
+            font-size: 15px; /* 字体大小 */
             cursor: pointer; /* 鼠标悬停时显示手型 */
+            margin-left: auto;
             border-radius: 10px;
-        }
-        .download:hover {
-        background-color: #e3e3e3; 
+            transition: background-color 0.3s ease; /* 添加过渡效果 */
+            width: 30px;
+            height: 25px;
         }
 
+        .donate-link:hover {
+            background-color: #45a049; /* 鼠标悬停时的背景颜色 */
+        }
+
+
+        .download{
+            background-color: rgb(92, 181, 255); /* 背景颜色改为蓝色 */
+            color: black; 
+            padding: 15px 30px; /* 内边距 */
+            text-align: center; /* 文字居中 */
+            text-decoration: none; /* 去掉下划线 */
+            display: inline-block; /* 行内块元素 */
+            font-size: 30px; /* 字体大小 */
+            margin: 4px 20px; /* 外边距 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            border-radius: 15px;
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }       
+        .download:hover {
+            transform: scale(1.6); /* 鼠标悬停时放大 */
+            background-color: rgb(92, 130, 255); /* 背景颜色改为蓝色 */
+        }
+
+        .menu_buttons {
+        position: relative;
+        display: inline-block;
+        padding: 2px 25px;
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+        scale: 2;
+    }
+
+    .menu_buttons:before {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* 调整线条与字体之间的距离 */
+        left: 50%; /* 将线条的起始位置设为中间 */
+        width: 0;
+        height: 2px;
+        background-color: black;
+        transition: width 0.3s ease, left 0.3s ease; /* 添加 left 属性的过渡效果 */
+    }
+
+    .menu_buttons:hover:before {
+        width: 50%; /* 将线条的宽度设为父元素宽度的一半 */
+        left: 25%; /* 将线条的起始位置设为父元素宽度的 25% 处 */
+    }
+
+
+    #copy_container{
+        color: white;
+        margin-top: 100px;
+        text-align: center;
+        font-size: 200%;
+    }
     </style>
 </head>
 <body>
     <div id="menu">
         <a href="#" >
-            <span >
-                <img src="./material/icon.png" width="100px" height="100px" alt="kooly" >
-                <h1 class  ='title'>kooly</h1>
+            <span>
+                <h1 class  ='title'>Kooly</h1>
             </span>
         </a>
         <span style="float: right;">
+            <div class="menu_buttons">
+                <a href="" target="_blank" style="text-decoration: none;">合作</a>
+            </div>
+            
             <a href="#" class="donate-link">捐赠</a>
         </span>
     </div>
 
     <div id="copy_container">
-        <h1 style="color: white; margin : 5px 20px ;">
-            您的
+        <h1>
+            专为你定制的
             <br>
-            免费桌宠。
+            <a class="download" href="https://wwyz.lanzoul.com/iU8Kv2mmbjqd" target="_blank">下载</a>
+            <br>
+            智能桌面宠物
         </h1>
-        <a class="download" href="https://wwyz.lanzoul.com/iU8Kv2mmbjqd">下载</a>
+        
     </div>
+    
     <hr>
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <div style="display: flex; justify-content: center;">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="90%" height="500px"></iframe>
+    </div>
 
 </body>
 </html>
