@@ -105,13 +105,86 @@
             left: 25%; /* 将线条的起始位置设为父元素宽度的 25% 处 */
         }
 
-
+        #copy_container {
+            position: relative; /* 设置为相对定位，作为 img 的定位上下文 */
+            text-align: center; /* 使容器内的内容居中 */
+            padding: 20px; /* 添加一些内边距 */
+        }
         #copy_container h1{
+            position: relative;
             color: white;
             margin-top: 100px;
             text-align: center;
             padding: 12px;
             font-size: 400%;
+            z-index: 2; /* 确保h1在顶层 */
+        }
+        #copy_container img {
+            position: absolute; /* 设置为绝对定位 */
+            z-index: 1; /* 设置较低的堆叠顺序，确保图片在底层 */
+            top :107px;
+            left: 20%;
+            transform: translateX(-50%); /* 通过 transform 调整图片的最终位置 */
+            width: 300px; /* 设置图片的宽度，根据需要调整 */
+            height: auto; /* 保持图片的原始宽高比 */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 创建2列，每列宽度相等 */
+            grid-template-rows: repeat(2, auto); /* 创建3行，行高根据内容自适应 */
+            gap: 10px; /* 设置格子之间的间隙 */
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column; /* 使内容垂直排列 */
+            align-items: center; /* 水平居中对齐 */
+            text-align: center; /* 文字居中对齐 */
+        }
+
+        .grid-item img {
+            max-width: 100%; /* 使图片宽度不超过格子 */
+            height: auto; /* 保持图片原始宽高比 */
+        }
+        .grid-item h4 {
+            color: white;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 创建2列，每列宽度相等 */
+            grid-template-rows: repeat(2, auto); /* 创建3行，行高根据内容自适应 */
+            gap: 10px 0px; /* 设置格子之间的间隙 */
+        }
+
+        .grid-item {
+            width: 70%;
+            display: flex;
+            flex-direction: column; /* 使内容垂直排列 */
+            align-items: center; /* 水平居中对齐 */
+            text-align: center; /* 文字居中对齐 */
+            border:4px solid #544946;
+            border-radius: 10px;
+            transition: transform 0.3s ease, filter 0.3s ease; /* 添加过渡效果 */
+        }
+        .grid-item:hover {
+            transform: translateY(-10px); /* 向上移动 */
+            filter: brightness(1.2); /* 增加亮度 */
+        }
+
+        .grid-item img {
+            max-width: 100%; /* 使图片宽度不超过格子 */
+            height: auto; /* 保持图片原始宽高比 */
+            
+        }
+
+        .text-background {
+            background-color: #363837; /* 设置背景颜色 */
+            width: 100%; /* 设置宽度与图片相同 */
+            height: 200px;
+            padding: 5px; /* 添加一些内边距 */
+            box-sizing: border-box; /* 确保内边距不会增加元素的总宽度 */
+            word-wrap: break-word; /* 确保长单词能够换行 */
+            overflow-wrap: break-word; /* 确保长单词能够换行 */
         }
     </style>
 </head>
@@ -133,21 +206,54 @@
         </span>
     </div>
 
-    <div id="copy_container">
+    <div id="copy_container" style="position: relative;">
         <h1>
             专为你定制的
             <br>
             <a class="download" href="https://wwyz.lanzoul.com/iU8Kv2mmbjqd" target="_blank">下载</a>
             <br>
             智能桌面宠物
-        </h1>
-        
+        </h1> 
+        <img src="./material/icon.png" alt="kooly icon">
     </div>
     
     <hr>
     <div style="display: flex; justify-content: center;">
         <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800px" height="500px"></iframe>
     </div>
-
+    <hr>
+    <h1 style="margin: 40px 50px; color: white;">特色</h1>
+    <div class="grid-container">
+        <!-- 第一个格子 -->
+        <div class="grid-item" style="margin-left:auto;">
+            <img src="./material/icon.png" alt="Image 1">
+            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
+        </div>
+        <!-- 第二个格子 -->
+        <div class="grid-item" style="margin-right: auto;margin-left: auto;">
+            <img src="./material/icon.png" alt="Image 2">
+            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
+        </div>
+        <!-- 第三个格子 -->
+        <div class="grid-item" style = "margin-right:auto;">
+            <img src="./material/icon.png" alt="Image 3">
+            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
+        </div>
+        <!-- 第四个格子 -->
+        <div class="grid-item" style="margin-left:auto;">
+            <img src="./material/icon.png" alt="Image 4">
+            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
+        </div>
+        <!-- 第五个格子 -->
+        <div class="grid-item" style="margin-right: auto;margin-left: auto;">
+            <img src="./material/icon.png" alt="Image 5">
+            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
+        </div>
+        <!-- 第六个格子 -->
+        <div class="grid-item" style = "margin-right:auto;">
+            <img src="./material/icon.png" alt="Image 6">
+            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
+        </div>
+    </div>
 </body>
 </html>
