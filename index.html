@@ -5,26 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kooly</title>
     <style>
-        body{
-            background-color: black;
-            background: linear-gradient(to bottom, blue, black);
-        }
-        #menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5%;
-            background-color: rgb(170, 235, 255);
-            z-index: 1000;
-            margin-bottom: 100px;
-        }
+       #menu {
+           /* 设置菜单的固定定位，使其始终保持在页面的顶部 */
+           position: fixed;
+           
+           /* 设置菜单距离页面顶部的距离为0，确保菜单紧贴页面顶部 */
+           top: 0;
+           
+           /* 设置菜单距离页面左侧的距离为0，确保菜单紧贴页面左侧 */
+           left: 0;
+           
+           /* 设置菜单的宽度为100%，使其占满整个页面的宽度 */
+           width: 100%;
+           
+           /* 设置菜单的高度为43像素 */
+           height: 43px;
+           
+           /* 设置菜单的背景颜色为浅蓝色（RGB值为170, 235, 255） */
+           background-color: rgb(170, 235, 255);
+           
+           /* 设置菜单的堆叠顺序为1000，确保菜单在其他元素之上 */
+           z-index: 1000;
+           
+           /* 设置菜单底部的外边距为100像素，为页面内容留出空间 */
+           margin-bottom: 100px;
+       }
+
         .title{
             display: inline-block;
             text-decoration: none;
             color: white;
             position: relative; 
             transform: translateY(-25px);
+			text-align: center;
         }
 
         .donate-link {
@@ -64,6 +77,7 @@
         .download:hover {
             transform: scale(1.6); /* 鼠标悬停时放大 */
             background-color: rgb(92, 130, 255); /* 背景颜色改为蓝色 */
+            box-shadow: 5px 5px 2px 0px paleturquoise;
         }
 
         .menu_buttons {
@@ -71,37 +85,37 @@
         display: inline-block;
         padding: 2px 25px;
         text-decoration: none;
-        color: black;
-        font-size: 12px;
+        font-size: 10px;
         scale: 2;
-    }
+        }
 
-    .menu_buttons:before {
-        content: "";
-        position: absolute;
-        bottom: -5px; /* 调整线条与字体之间的距离 */
-        left: 50%; /* 将线条的起始位置设为中间 */
-        width: 0;
-        height: 2px;
-        background-color: black;
-        transition: width 0.3s ease, left 0.3s ease; /* 添加 left 属性的过渡效果 */
-    }
+        .menu_buttons:before {
+            content: "";
+            position: absolute;
+            bottom: -2px; /* 调整线条与字体之间的距离 */
+            left: 50%; /* 将线条的起始位置设为中间 */
+            width: 0;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease, left 0.3s ease; /* 添加 left 属性的过渡效果 */
+        }
 
-    .menu_buttons:hover:before {
-        width: 50%; /* 将线条的宽度设为父元素宽度的一半 */
-        left: 25%; /* 将线条的起始位置设为父元素宽度的 25% 处 */
-    }
+        .menu_buttons:hover:before {
+            width: 50%; /* 将线条的宽度设为父元素宽度的一半 */
+            left: 25%; /* 将线条的起始位置设为父元素宽度的 25% 处 */
+        }
 
 
-    #copy_container{
-        color: white;
-        margin-top: 100px;
-        text-align: center;
-        font-size: 200%;
-    }
+        #copy_container h1{
+            color: white;
+            margin-top: 100px;
+            text-align: center;
+            padding: 12px;
+            font-size: 400%;
+        }
     </style>
 </head>
-<body>
+<body style="background-color: black;background: linear-gradient(to bottom, blue, black);">
     <div id="menu">
         <a href="#" >
             <span>
@@ -112,7 +126,9 @@
             <div class="menu_buttons">
                 <a href="" target="_blank" style="text-decoration: none;">合作</a>
             </div>
-            
+            <div class="menu_buttons">
+                <a href="" target="_blank" style="text-decoration: none;">文档</a>
+            </div>
             <a href="#" class="donate-link">捐赠</a>
         </span>
     </div>
@@ -130,7 +146,7 @@
     
     <hr>
     <div style="display: flex; justify-content: center;">
-        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="90%" height="500px"></iframe>
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800px" height="500px"></iframe>
     </div>
 
 </body>
