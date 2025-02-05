@@ -187,6 +187,23 @@
             word-wrap: break-word; /* 确保长单词能够换行 */
             overflow-wrap: break-word; /* 确保长单词能够换行 */
         }
+        .writer img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 20%;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .writer img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        .writer h1 {
+            scale: 2;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 <body style="background-color: black;background: linear-gradient(to bottom, blue, black);">
@@ -223,9 +240,25 @@
         <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800px" height="500px"></iframe>
     </div>
     <hr>
-    <h2 style="color: wheat;">Kooly是一款个性化强烈的桌宠，让大部分人喜欢。您可以自由更换其功能，外貌等等，让它更符合你的需求。同时，Kooly也是您使用电脑的得力助手，它拥有Ai功能，能帮助您完成一系列电脑操作。其核心为小工具，您可以通过小工具调用各种应用，也可以自由更换小工具。在以后，我们还将实现各种功能，比如手机电脑的互联等等，敬请期待吧！ </h2>
+    <h2 style="color: wheat;">Kooly是一款个性化强烈的桌宠，让大部分人喜欢。您可以自由更换其功能，外貌等等，让它更符合你的需求。同时，Kooly也是您使用电脑的得力助手，它拥有Ai功能，能帮助您完成一系列电脑操作。其核心为小工具，您可以通过小工具调用各种应用，也可以自由更换小工具。在以后，我们还将实现各种功能，比如手机电脑的互联等等，敬请期待吧！</h2>
     <hr>
     <h1 style="margin: 40px 50px; color: white;">不一样的桌宠————软件特色</h1>
+    <script>
+        function adjustFontSize() {
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const pElements = document.querySelectorAll('.text-background p');
+            pElements.forEach(p => {
+                // 根据窗口宽度调整字体大小，这里可以根据需要调整算法
+                const newSize = Math.max(12, Math.min(24, vw / 50));
+                p.style.fontSize = newSize + 'px';
+            });
+        }
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', adjustFontSize);
+        // 初始化字体大小
+        adjustFontSize();
+    </script>
     <div class="grid-container">
         <!-- 第一个格子 -->
         <div class="grid-item" style="margin-left:auto;">
@@ -257,22 +290,16 @@
         </div>
         -->
     </div>
-    <script>
-        function adjustFontSize() {
-            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-            const pElements = document.querySelectorAll('.text-background p');
-            pElements.forEach(p => {
-                // 根据窗口宽度调整字体大小，这里可以根据需要调整算法
-                const newSize = Math.max(12, Math.min(24, vw / 50));
-                p.style.fontSize = newSize + 'px';
-            });
-        }
-
-        // 监听窗口大小变化
-        window.addEventListener('resize', adjustFontSize);
-        // 初始化字体大小
-        adjustFontSize();
-    </script>
-    
+    <div class="writers-show">
+        <h1  style="margin: 40px 50px; color: white;">开发者</h1>
+        <div class="writers">
+            <div class="writer">
+                <a href="https://space.bilibili.com/1786990005" target="_blank">
+                    <img src="https://creation.codemao.cn//490/aW9zXzEwMDFfMTUyMDE2NTE3OV8wXzE3MTY2MzU0MTAwNzlfZjE0dVREZGE.jpeg" alt="Author 1">
+                </a>
+                
+                <h1>代码奇迹</h1>
+            </div>
+    </div>
 </body>
 </html>
