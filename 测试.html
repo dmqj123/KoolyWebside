@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>字体大小随窗口宽度变化</title>
+    <style>
+        .resizable-text {
+            font-size: 16px; /* 初始字体大小 */
+        }
+    </style>
+</head>
+<body>
+    <div class="resizable-container">
+        <h1>1</h1>
+        <p class="resizable-text">这是一个可以随着窗口宽度变化而改变字体大小的文本。</p>
+    </div>
+    <div class="resizable-container">
+        <h1>2</h1>
+        <p class="resizable-text">这是一个可以随着窗口宽度变化而改变字体大小的文本。</p>
+    </div>
+    <div class="resizable-container">
+        <h1>3</h1>
+        <p class="resizable-text">这是一个可以随着窗口宽度变化而改变字体大小的文本。</p>
+    </div>
+
+    <script>
+        // 更新字体大小的函数
+        function updateFontSize() {
+            const windowWidth = window.innerWidth;
+            const baseFontSize = 16; // 基础字体大小
+            const scaleFactor = windowWidth / 1000; // 根据窗口宽度调整的比例因子
+            const newFontSize = Math.max(baseFontSize, baseFontSize * scaleFactor); // 计算新的字体大小
+
+            // 获取所有 class 为 resizable-container 的 div 元素
+            const containers = document.querySelectorAll('.resizable-container');
+            // 遍历每个 div 元素
+            containers.forEach(container => {
+                // 获取 div 元素内的所有 p 元素
+                const paragraphs = container.getElementsByTagName('p');
+                // 遍历所有 p 元素并更新字体大小
+                for (let i = 0; i < paragraphs.length; i++) {
+                    paragraphs[i].style.fontSize = newFontSize + 'px';
+                }
+            });
+        }
+
+        // 初始加载时更新字体大小
+        window.onload = updateFontSize;
+
+        // 窗口大小改变时更新字体大小
+        window.onresize = updateFontSize;
+    </script>
+</body>
+</html>

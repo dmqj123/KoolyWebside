@@ -181,7 +181,7 @@
         .text-background {
             background-color: #363837; /* 设置背景颜色 */
             width: 100%; /* 设置宽度与图片相同 */
-            height: 200px;
+            height: 250px;
             padding: 5px; /* 添加一些内边距 */
             box-sizing: border-box; /* 确保内边距不会增加元素的总宽度 */
             word-wrap: break-word; /* 确保长单词能够换行 */
@@ -211,7 +211,7 @@
         <h1>
             专为你定制的
             <br>
-            <a class="download" href="https://www.zhanid.com/api/lanzoujx.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiFgh12mr2n8f&type=down" target="_blank">下载</a>
+            <a class="download" href="https://api.kxzjoker.cn/API/lanzou.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiX5gS2ms6ala&pwd=2xcd&type=down" target="_blank">下载</a>
             <br>
             智能桌面宠物
         </h1> 
@@ -255,5 +255,22 @@
         </div>
         -->
     </div>
+    <script>
+        function adjustFontSize() {
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const pElements = document.querySelectorAll('.text-background p');
+            pElements.forEach(p => {
+                // 根据窗口宽度调整字体大小，这里可以根据需要调整算法
+                const newSize = Math.max(12, Math.min(24, vw / 50));
+                p.style.fontSize = newSize + 'px';
+            });
+        }
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', adjustFontSize);
+        // 初始化字体大小
+        adjustFontSize();
+    </script>
+    
 </body>
 </html>
