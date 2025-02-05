@@ -181,7 +181,7 @@
         .text-background {
             background-color: #363837; /* 设置背景颜色 */
             width: 100%; /* 设置宽度与图片相同 */
-            height: 200px;
+            height: 250px;
             padding: 5px; /* 添加一些内边距 */
             box-sizing: border-box; /* 确保内边距不会增加元素的总宽度 */
             word-wrap: break-word; /* 确保长单词能够换行 */
@@ -256,33 +256,20 @@
         -->
     </div>
     <script>
-        // 更新字体大小的函数
-        function updateFontSize() {
-            const windowWidth = window.innerWidth;
-            const baseFontSize = 16; // 基础字体大小
-            const scaleFactor = windowWidth / 1000; // 根据窗口宽度调整的比例因子
-            const newFontSize = Math.max(baseFontSize, baseFontSize * scaleFactor); // 计算新的字体大小
-
-            // 获取所有 class 为 resizable-container 的 div 元素
-            const containers = document.querySelectorAll('.resizable-container');
-            // 遍历每个 div 元素
-            containers.forEach(container => {
-                // 获取 div 元素内的所有 p 元素
-                const paragraphs = container.getElementsByTagName('p');
-                // 遍历所有 p 元素并更新字体大小
-                for (let i = 0; i < paragraphs.length; i++) {
-                    paragraphs[i].style.fontSize = newFontSize + 'px';
-                }
+        function adjustFontSize() {
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const pElements = document.querySelectorAll('.text-background p');
+            pElements.forEach(p => {
+                // 根据窗口宽度调整字体大小，这里可以根据需要调整算法
+                const newSize = Math.max(12, Math.min(24, vw / 50));
+                p.style.fontSize = newSize + 'px';
             });
         }
 
-        // 初始加载时更新字体大小
-        window.onload = updateFontSize;
-
-        // 窗口大小改变时更新字体大小
-        window.onresize = updateFontSize;
-
-
+        // 监听窗口大小变化
+        window.addEventListener('resize', adjustFontSize);
+        // 初始化字体大小
+        adjustFontSize();
     </script>
     
 </body>
