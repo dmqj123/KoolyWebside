@@ -73,30 +73,31 @@
         }
 
         .menu_buttons {
-            clear: both; /* 清除浮动 */
             position: relative;
-            display: inline-block;
-            padding: 2px 25px;
-            text-decoration: none;
-            font-size: 10px;
-            scale: 2;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: black;
         }
 
-        .menu_buttons:before {
+        .menu_buttons::before {
             content: "";
             position: absolute;
-            bottom: -2px; /* 调整线条与字体之间的距离 */
-            left: 50%; /* 将线条的起始位置设为中间 */
             width: 0;
             height: 2px;
+            bottom: 0;
+            left: 50%;
             background-color: black;
-            transition: width 0.3s ease, left 0.3s ease; /* 添加 left 属性的过渡效果 */
+            transition: width 0.3s ease, left 0.3s ease;
         }
 
-        .menu_buttons:hover:before {
-            width: 50%; /* 将线条的宽度设为父元素宽度的一半 */
-            left: 25%; /* 将线条的起始位置设为父元素宽度的 25% 处 */
+        .menu_buttons:hover::before {
+            width: 100%;
+            left: 0;
         }
+
 
         #copy_container {
             position: relative; /* 设置为相对定位，作为 img 的定位上下文 */
@@ -199,6 +200,17 @@
             color: white;
             text-align: center;
         }
+        #cooperate h1{
+            color: white;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        
+        .copy-button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body style="background-color: black;background: linear-gradient(to bottom, blue, black);">
@@ -209,12 +221,8 @@
             </span>
         </a>
         <span style="float: right;">
-            <div class="menu_buttons">
-                <a href="" target="_blank" style="text-decoration: none;">合作</a>
-            </div>
-            <div class="menu_buttons">
-                <a href="" target="_blank" style="text-decoration: none;">文档</a>
-            </div>
+            <button class="menu_buttons" onclick="scrollToTarget()"style = 'border: none;background: transparent;font-size:15px'>合作</button>
+            <button class="menu_buttons" onclick="window.location.href='#'" style = 'border: none;background: transparent;font-size:15px'>文档</button>
             <a href="#" class="donate-link">捐赠</a>
         </span>
     </div>
@@ -283,6 +291,13 @@
             </div>
         </div>
     </div>
+    <hr>
+    <div id="cooperate">
+        <h2 style="margin: 40px 50px; color: white; font-size: 40px;">合作</h2>
+        <h1>联系方式: <span id="contact">12345678910</span> <button class="copy-button" onclick="copyText('contact')">复制</button></h1>
+        <br>
+        <h1>邮箱: <span id="email">123456789010.com</span> <button class="copy-button" onclick="copyText('email')">复制</button></h1>
+    </div>
     <script>
         function adjustFontSize() {
             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
@@ -304,6 +319,32 @@
         window.addEventListener('resize', adjustFontSize);
         // 初始化字体大小
         adjustFontSize();
+
+        function copyText(elementId) {
+            // 获取要复制的文本元素
+            var textElement = document.getElementById(elementId);
+            var textToCopy = textElement.innerText;
+
+            // 创建一个临时的textarea元素用于复制文本
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+
+            // 选择并复制文本
+            tempTextArea.select();
+            document.execCommand("copy");
+
+            // 移除临时的textarea元素
+            document.body.removeChild(tempTextArea);
+
+            // 提示用户复制成功
+            alert("已复制: " + textToCopy);
+        }
+            function scrollToTarget() {
+            var targetElement = document.getElementById('cooperate');
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        
+        }
     </script>
 </body>
 </html>
