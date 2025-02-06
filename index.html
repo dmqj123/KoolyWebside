@@ -6,31 +6,21 @@
     <title>Kooly————你的智能助手</title>
     <link rel="icon" href="./material/icon.png" type="image/png">
     <style>
-       #menu {
-           /* 设置菜单的固定定位，使其始终保持在页面的顶部 */
-           position: fixed;
-           
-           /* 设置菜单距离页面顶部的距离为0，确保菜单紧贴页面顶部 */
-           top: 0;
-           
-           /* 设置菜单距离页面左侧的距离为0，确保菜单紧贴页面左侧 */
-           left: 0;
-           
-           /* 设置菜单的宽度为100%，使其占满整个页面的宽度 */
-           width: 100%;
-           
-           /* 设置菜单的高度为43像素 */
-           height: 43px;
-           
-           /* 设置菜单的背景颜色为浅蓝色（RGB值为170, 235, 255） */
-           background-color: rgb(170, 235, 255);
-           
-           /* 设置菜单的堆叠顺序为1000，确保菜单在其他元素之上 */
-           z-index: 1000;
-           
-           /* 设置菜单底部的外边距为100像素，为页面内容留出空间 */
-           margin-bottom: 100px;
-       }
+        body{
+            background-color: black;
+            background: linear-gradient(to bottom, blue, black);
+        }
+        #menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 43px;
+            background-color: rgb(170, 235, 255);
+            z-index: 1000;
+            margin-bottom: 100px;
+            overflow: hidden; /* 清除浮动 */
+        }
 
         .title{
             display: inline-block;
@@ -55,6 +45,7 @@
             transition: background-color 0.3s ease; /* 添加过渡效果 */
             width: 30px;
             height: 25px;
+            clear: both; /* 清除浮动 */
         }
 
         .donate-link:hover {
@@ -82,12 +73,13 @@
         }
 
         .menu_buttons {
-        position: relative;
-        display: inline-block;
-        padding: 2px 25px;
-        text-decoration: none;
-        font-size: 10px;
-        scale: 2;
+            clear: both; /* 清除浮动 */
+            position: relative;
+            display: inline-block;
+            padding: 2px 25px;
+            text-decoration: none;
+            font-size: 10px;
+            scale: 2;
         }
 
         .menu_buttons:before {
@@ -131,16 +123,20 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 创建2列，每列宽度相等 */
-            grid-template-rows: repeat(2, auto); /* 创建3行，行高根据内容自适应 */
-            gap: 10px; /* 设置格子之间的间隙 */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 10px 0px;
         }
 
         .grid-item {
+            width: 100%; /* 调整宽度为100% */
             display: flex;
-            flex-direction: column; /* 使内容垂直排列 */
-            align-items: center; /* 水平居中对齐 */
-            text-align: center; /* 文字居中对齐 */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 4px solid #544946;
+            border-radius: 10px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
         .grid-item img {
@@ -194,13 +190,12 @@
             width: 20%;
             transition: transform 0.5s ease, filter 0.5s ease;
         }
-
         .writer img:hover {
             transform: scale(1.1);
             filter: brightness(1.2);
         }
         .writer h1 {
-            scale: 2;
+            font-size: 75px; 
             color: white;
             text-align: center;
         }
@@ -300,6 +295,7 @@
                 
                 <h1>代码奇迹</h1>
             </div>
+        </div>
     </div>
 </body>
 </html>
