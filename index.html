@@ -7,6 +7,9 @@
     <link rel="icon" href="./material/icon.png" type="image/png">
     <style>
         body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
             background-color: black;
             background: linear-gradient(to bottom, blue, black);
         }
@@ -23,6 +26,7 @@
         }
 
         .title{
+            font-size: 1vw;
             display: inline-block;
             text-decoration: none;
             color: white;
@@ -179,7 +183,7 @@
             background-color: #363837; /* 设置背景颜色 */
             width: 100%; /* 设置宽度与图片相同 */
             height: 250px;
-            padding: 5px; /* 添加一些内边距 */
+            padding: 1vw; /* 添加一些内边距 */
             box-sizing: border-box; /* 确保内边距不会增加元素的总宽度 */
             word-wrap: break-word; /* 确保长单词能够换行 */
             overflow-wrap: break-word; /* 确保长单词能够换行 */
@@ -210,6 +214,12 @@
         .copy-button {
             margin-left: 10px;
             cursor: pointer;
+        }
+
+        #email, #contact {
+            color: white;
+            cursor: pointer;
+            font-size: 6vw; /* 使用视口宽度单位 */
         }
     </style>
 </head>
@@ -244,60 +254,46 @@
         <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113864851064277&bvid=BV1cgwbe2EyP&cid=27990559523&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800px" height="500px"></iframe>
     </div>
     <hr>
-    <h2 style="color: wheat;">Kooly是一款个性化强烈的桌宠，让大部分人喜欢。您可以自由更换其功能，外貌等等，让它更符合你的需求。同时，Kooly也是您使用电脑的得力助手，它拥有Ai功能，能帮助您完成一系列电脑操作。其核心为小工具，您可以通过小工具调用各种应用，也可以自由更换小工具。在以后，我们还将实现各种功能，比如手机电脑的互联等等，敬请期待吧！</h2>
+    <h2 style="color: wheat;font-size: 2.6vw;padding: 1vw;">Kooly是一款个性化强烈的桌宠，让大部分人喜欢。您可以自由更换其功能，外貌等等，让它更符合你的需求。同时，Kooly也是您使用电脑的得力助手，它拥有Ai功能，能帮助您完成一系列电脑操作。其核心为小工具，您可以通过小工具调用各种应用，也可以自由更换小工具。在以后，我们还将实现各种功能，比如手机电脑的互联等等，敬请期待吧！</h2>
     <hr>
-    <h1 style="margin: 40px 50px; color: white;">不一样的桌宠————软件特色</h1>
+    <h1 style="margin: 40px 50px; color: white;font-size: 5vw;">不一样的桌宠————软件特色</h1>
 
     <div class="grid-container">
         <!-- 第一个格子 -->
         <div class="grid-item" style="margin-left:auto;">
             <img src="./material/mdwd1.jpeg" alt="Image 1">
-            <div class="text-background"><h2 style="color: white;">高度的定制</h2><p style="color : rgb(98, 156, 139)">我们的软件为你量身打造，你可以自由更换Kooly的图标，功能等等个性化设置</p></div>
+            <div class="text-background"><h2 style="color: white;">高度的定制</h2><p style="color : rgb(98, 156, 139);font-size: 2vw;">我们的软件为你量身打造，你可以自由更换Kooly的图标，功能等等个性化设置</p></div>
         </div>
         <!-- 第二个格子 -->
         <div class="grid-item" style="margin-right: auto;margin-left: auto;">
             <img src="./material/mdwd2.jpg" alt="Image 2">
-            <div class="text-background"><h2  style="color: white;">强大的Ai</h2><p style="color : rgb(98, 156, 139)">Ai功能即将推出，将嵌入Kooly，实现大模型的调用，让Kooly自主完成一系列操作</p></div>
+            <div class="text-background"><h2  style="color: white;">强大的Ai</h2><p style="color : rgb(98, 156, 139);font-size: 2vw;">Ai功能即将推出，将嵌入Kooly，实现大模型的调用，让Kooly自主完成一系列操作</p></div>
         </div>
         <!-- 第三个格子 -->
         <div class="grid-item" style = "margin-right:auto;">
             <img src="./material/mdwd3.png" alt="Image 3">
-            <div class="text-background"><h2 style="color: white;">扩展性强</h2><p style="color : rgb(98, 156, 139)">其小工具功能可以自由接入其他软件，让其功能任你更改，小工具商店即将推出</p></div>
+            <div class="text-background"><h2 style="color: white;">扩展性强</h2><p style="color : rgb(98, 156, 139);font-size: 2vw;">其小工具功能可以自由接入其他软件，让其功能任你更改，小工具商店即将推出</p></div>
         </div>
-        <!--
-        <div class="grid-item" style="margin-left:auto;">
-            <img src="./material/icon.png" alt="Image 4">
-            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
-        </div>
-        <div class="grid-item" style="margin-right: auto;margin-left: auto;">
-            <img src="./material/icon.png" alt="Image 5">
-            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
-        </div>
-        <div class="grid-item" style = "margin-right:auto;">
-            <img src="./material/icon.png" alt="Image 6">
-            <div class="text-background"><h2>主题</h2><p>详细描写</p></div>
-        </div>
-        -->
     </div>
     <hr>
     <div class="writers-show">
-        <h1  style="margin: 40px 50px; color: white;">开发者</h1>
+        <h1  style="margin: 40px 50px; color: white;font-size: 5vw;">开发者</h1>
         <div class="writers">
             <div class="writer">
                 <a href="https://space.bilibili.com/1786990005" target="_blank">
                     <img src="https://creation.codemao.cn//490/aW9zXzEwMDFfMTUyMDE2NTE3OV8wXzE3MTY2MzU0MTAwNzlfZjE0dVREZGE.jpeg" alt="Author 1">
                 </a>
                 
-                <h1>代码奇迹</h1>
+                <h1 style="font-size: 5vw;">代码奇迹</h1>
             </div>
         </div>
     </div>
     <hr>
     <div id="cooperate">
-        <h2 style="margin: 40px 50px; color: white; font-size: 40px;">合作</h2>
-        <h1>微信: <span id="contact" onclick="copyText('contact')">mold2099</span>
+        <h2 style="margin: 40px 50px; color: white; font-size: 5vw;">合作</h2>
+        <h1 style="color:white;font-size: 6vw;">微信: <span id="contact" onclick="copyText('contact')">mold2099</span></h1>
         <br>
-        <h1>邮箱: <span id="email" onclick="copyText('email')">1056372908@qq.com</span>
+        <h1 style="color:white;font-size: 6vw;">邮箱: <span id="email" onclick="copyText('email')">1056372908@qq.com</span></h1>
     </div>
     <script>
         function adjustFontSize() {
