@@ -206,7 +206,7 @@
             filter: brightness(1.2);
         }
         .writer h1 {
-            font-size: 75px; 
+
             color: white;
             text-align: center;
         }
@@ -307,7 +307,7 @@
         <!-- 第一个格子 -->
         <div class="grid-item" style="margin-left:auto;">
             <img src="./material/mdwd1.jpeg" alt="Image 1">
-            <div class="text-background"><h2 style="color: white;">高度的定制</h2><p style="color : rgb(98, 156, 139);font-size: 2vw;">我们的软件为你量身打造，你可以自由更换Kooly的图标，功能等等个性化设置</p></div>
+            <div class="text-background"><h2 style="color: white;">高度定制</h2><p style="color : rgb(98, 156, 139);font-size: 2vw;">我们的软件为你量身打造，你可以自由更换Kooly的图标，功能等等个性化设置</p></div>
         </div>
         <!-- 第二个格子 -->
         <div class="grid-item" style="margin-right: auto;margin-left: auto;">
@@ -373,14 +373,14 @@
             const pElements = document.querySelectorAll('.text-background p');
             pElements.forEach(p => {
                 // 根据窗口宽度调整字体大小，这里可以根据需要调整算法
-                const newSize = Math.max(12, Math.min(24, vw / 50));
-                p.style.fontSize = newSize + 'px';
+                const newSize_p = Math.max(12, Math.min(24, vw / 50));
+                p.style.fontSize = newSize_p + 'px';
             });
             const h1Elements = document.querySelectorAll('.writer h1');
             h1Elements.forEach(h1 => {
                 // 根据窗口宽度调整字体大小，这里可以根据需要调整算法
-                const newSize = Math.max(12, Math.min(24, vw / 50))*3;
-                h1.style.fontSize = newSize + 'px';
+                const newSize_h1 = Math.max(48, Math.min(96, vw / 50))*3;
+                h1.style.fontSize = newSize_h1 + 'px';
             });
         }
 
