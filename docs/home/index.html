@@ -59,11 +59,11 @@
             right: 0;
             /* 距离右边0 */
             padding: 20px;
-            background-color: white;
             overflow-y: auto;
             /* 内容超出时显示滚动条 */
             height: 100vh;
             /* 视口高度 */
+            background-color: rgb(177, 177, 177);
         }
 
         .footer {
@@ -75,32 +75,36 @@
             bottom: 0;
             width: 100%;
         }
+        .content p {
+            font-size: 1.2em;
+        }
     </style>
 </head>
 
 <body>
-    <a href="#">
+    <a href="https://kooly.us.kg/">
         <span>
             <h1 class='title'>Kooly</h1>
         </span>
     </a>
     <div class="header">
-        <h1>KOOLY 文档</h1>
+        <h1>KOOLY 官方文档</h1>
     </div>
     <div class="sidebar">
         <ul>
             <li><a href="#">首页</a></li>
-            <li><a href="#">教程</a></li>
-            <li><a href="#">API 参考</a></li>
+            <li><a href="#">小工具开发</a></li>
+            <li><a href="#">配置文件</a></li>
             <li><a href="#">关于</a></li>
         </ul>
     </div>
     <div class="content">
-        <h2>欢迎来到 KOOLY 文档</h2>
+        <h1>欢迎来到 KOOLY 文档</h1>
+        <h3 style="color: rgb(255, 136, 0);">该文档匹配的Kooly版本：1.0.3</h3>
         <p>这里是一些关于如何使用KOOLY的示例和教程。</p>
     </div>
     <div class="footer">
-        <p>© 2025 KOOLY 文档</p>
+        <p>KOOLY 文档 1.0.3</p>
     </div>
 </body>
 
