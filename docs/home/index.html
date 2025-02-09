@@ -14,6 +14,7 @@
         }
         .title {
             position: fixed; /* 固定位置 */
+            font-size: clamp(20px, 3vh, 100px);
             top: 0; /* 距离顶部0 */
             left: 0; /* 距离左边0 */
             margin: 0; /* 移除默认的外边距 */
@@ -30,12 +31,13 @@
         }
 
         .sidebar {
-            width: 200px;
+            width: clamp(50px, 30vw, 200px);
             background-color: #333;
             color: white;
             height: 100vh;
             position: fixed;
             overflow-y: auto;
+            top:130px ;
         }
 
         .sidebar a {
@@ -52,10 +54,10 @@
         .content {
             position: fixed;
             /* 固定位置 */
-            top: 129px;
+            top: 130px;
             /* 距离顶部0 */
-            left: 200px;
-            /* 距离左边250px，与侧边栏宽度相同 */
+            left:clamp(50px, 30vw, 200px);
+            /* 距离左边30vw，与侧边栏宽度相同 */
             right: 0;
             /* 距离右边0 */
             padding: 20px;
@@ -75,33 +77,56 @@
             bottom: 0;
             width: 100%;
         }
-        .content p {
-            font-size: 1.2em;
-        }
-        .code-container {
-            position: relative;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #f9f9f9;
-            overflow-x: auto;
-        }
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            background-color: #007bff;
+        .copy-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
             color: white;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
         }
-        .copy-button:hover {
+
+        .copy-btn:hover {
             background-color: #0056b3;
+            /* 悬停时按钮亮度增加 */
+            transform: translateY(-5px);
+            /* 悬停时按钮向上移动 */
         }
-        pre {
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .code-box {
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .code-content {
             white-space: pre-wrap;
+            font-family: monospace;
         }
+
+
     </style>
 </head>
 
@@ -127,29 +152,47 @@
         <h1 style="text-align: center;">欢迎来到 KOOLY 官方文档</h1>
         <h3 style="color: rgb(255, 136, 0);">该文档匹配的Kooly版本：1.0.3</h3>
         <p>这里是一些关于如何使用KOOLY的示例和教程。你可以在这里查阅Kooly的相关信息，以便你使用和探索Kooly。</p>
-        <!--
-        <div class="code-container">
-            <button class="copy-button" onclick="copyCode('复制内容')">复制代码</button>
-            <pre id="code-block">
-    // 这是一个示例代码
-    function helloWorld() {
-        console.log("Hello, World!");
-    }
-            </pre>
-        </div>
+        <!--<div class="container">
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                <pre class="code-content">
+          function helloWorld() {
+            console.log("Hello, World!");
+          }
+        </pre>
+            </div>
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                <pre class="code-content">
+          for (let i = 0; i < 10; i++) {
+            console.log(i);
+          }
+        </pre>
+            </div>
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                <pre class="code-content">
+        const sum = (a, b) => a + b;
+        console.log(sum(5, 3));
+        </pre>
+            </div>
+        </div>-->
     </div>
-    -->
+   
     <div class="footer">
         <p>KOOLY 文档 1.0.3</p>
     </div>
     <script>
-        function copyCode(text) {
-            navigator.clipboard.writeText(text).then(() => {
-              console.log("文字已复制到剪切板");
-            }).catch(err => {
-              console.error("复制失败: ", err);
-            });
-            
+        function copyCode(button) {
+            const codeBox = button.parentElement;
+            const codeContent = codeBox.querySelector('.code-content').textContent;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = codeContent;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('代码已复制');
         }
     </script>
 </body>
