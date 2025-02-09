@@ -23,11 +23,13 @@
             z-index: 1000; /* 确保在最上层 */
         }
         .header {
+            position: fixed;
             font-size: clamp(10px, clamp(0px , 1vh, 100px), 50px);
             background-color: #3b5998;
             color: white;
             padding: 0.5vh;
             text-align: center;
+            width: 100%;
         }
 
         .sidebar {
@@ -37,7 +39,7 @@
             height: 100vh;
             position: fixed;
             overflow-y: auto;
-            top:100px ;
+            top: 100px ;
         }
 
         .sidebar a {
@@ -72,7 +74,7 @@
         }
 
         .footer {
-            font-size: clamp(5px, 1.5vw, 60px);
+            font-size: clamp(5px, 1.5vh, 30px);
             background-color: #3b5998;
             color: white;
             text-align: center;
@@ -154,7 +156,7 @@
     </div>
     <div class="content">
         <h1 style="text-align: center;font-size: clamp(10px, 3vw, 80px);">欢迎来到 KOOLY 官方文档</h1>
-        <h3 style="color: rgb(255, 136, 0);">该文档匹配的Kooly版本：1.0.3</h3>
+        <h3 style="color: rgb(255, 136, 0);font-size: clamp(10px, 1.5vw, 40px);">该文档匹配的Kooly版本：1.0.3</h3>
         <p>这里是一些关于如何使用KOOLY的示例和教程。你可以在这里查阅Kooly的相关信息，以便你使用和探索Kooly。</p>
         <!--<div class="container">
             <div class="code-box">
