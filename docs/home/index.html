@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOOLY 文档模仿</title>
+    <style>
+        #mbody {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /*background-color: #3b5998;*/
+        }
+        .title {
+            position: fixed; /* 固定位置 */
+            font-size: clamp(20px, 3vh, 100px);
+            top: 0; /* 距离顶部0 */
+            left: 0; /* 距离左边0 */
+            margin: 0; /* 移除默认的外边距 */
+            padding: 10px; /* 添加一些内边距 */
+            color: white; /* 文字颜色 */
+            z-index: 1000; /* 确保在最上层 */
+        }
+        .header {
+            position: fixed;
+            font-size: clamp(10px, clamp(0px , 1vh, 100px), 50px);
+            background-color: #3b5998;
+            color: white;
+            padding: 0.5vh;
+            text-align: center;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: clamp(50px, 30vw, 200px);
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            top: 100px ;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            /* 去掉下划线 */
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+            /* 鼠标悬停时显示下划线 */
+        }
+
+        .content {
+            position: fixed;
+            /* 固定位置 */
+            top: 100px;
+            /* 距离顶部0 */
+            left:clamp(50px, 30vw, 200px);
+            /* 距离左边30vw，与侧边栏宽度相同 */
+            right: 0;
+            /* 距离右边0 */
+            padding: 20px;
+            overflow-y: auto;
+            /* 内容超出时显示滚动条 */
+            height: 100vh;
+            /* 视口高度 */
+            background-color: rgb(177, 177, 177);
+        }
+        .content p {
+            font-size: clamp(10px, 1.5vw, 40px);
+        }
+
+        .footer {
+            font-size: clamp(5px, 1.5vh, 30px);
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .copy-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        .copy-btn:hover {
+            background-color: #0056b3;
+            /* 悬停时按钮亮度增加 */
+            transform: translateY(-5px);
+            /* 悬停时按钮向上移动 */
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .code-box {
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .code-content {
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+
+
+    </style>
+</head>
+
+<body id="mbody">
+    <div class="header">
+        <a href="https://kooly.us.kg/">
+            <span>
+                <h1 class='title'>Kooly</h1>
+            </span>
+        </a>
+        <h1>KOOLY 官方文档</h1>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">小工具开发</a></li>
+            <li><a href="#">配置文件</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">源代码</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1 style="text-align: center;font-size: clamp(10px, 3vw, 80px);">欢迎来到 KOOLY 官方文档</h1>
+        <h3 style="color: rgb(255, 136, 0);font-size: clamp(10px, 1.5vw, 40px);">该文档匹配的Kooly版本：1.0.3</h3>
+        <p>这里是一些关于如何使用KOOLY的示例和教程。你可以在这里查阅Kooly的相关信息，以便你使用和探索Kooly。</p>
+        <!--<div class="container">
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                <pre class="code-content">
+          function helloWorld() {
+            console.log("Hello, World!");
+          }
+        </pre>
+            </div>
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                <pre class="code-content">
+          for (let i = 0; i < 10; i++) {
+            console.log(i);
+          }
+        </pre>
+            </div>
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                <pre class="code-content">
+        const sum = (a, b) => a + b;
+        console.log(sum(5, 3));
+        </pre>
+            </div>
+        </div>-->
+    </div>
+   
+    <div class="footer">
+        <p>KOOLY 文档 1.0.3</p>
+    </div>
+    <script>
+        function copyCode(button) {
+            const codeBox = button.parentElement;
+            const codeContent = codeBox.querySelector('.code-content').textContent;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = codeContent;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('代码已复制');
+        }
+    </script>
+</body>
+
+</html>
