@@ -78,6 +78,30 @@
         .content p {
             font-size: 1.2em;
         }
+        .code-container {
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            overflow-x: auto;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            white-space: pre-wrap;
+        }
     </style>
 </head>
 
@@ -103,10 +127,31 @@
         <h1 style="text-align: center;">欢迎来到 KOOLY 官方文档</h1>
         <h3 style="color: rgb(255, 136, 0);">该文档匹配的Kooly版本：1.0.3</h3>
         <p>这里是一些关于如何使用KOOLY的示例和教程。你可以在这里查阅Kooly的相关信息，以便你使用和探索Kooly。</p>
+        <!--
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode('复制内容')">复制代码</button>
+            <pre id="code-block">
+    // 这是一个示例代码
+    function helloWorld() {
+        console.log("Hello, World!");
+    }
+            </pre>
+        </div>
     </div>
+    -->
     <div class="footer">
         <p>KOOLY 文档 1.0.3</p>
     </div>
+    <script>
+        function copyCode(text) {
+            navigator.clipboard.writeText(text).then(() => {
+              console.log("文字已复制到剪切板");
+            }).catch(err => {
+              console.error("复制失败: ", err);
+            });
+            
+        }
+    </script>
 </body>
 
 </html>
