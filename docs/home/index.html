@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOOLY 文档模仿</title>
+    <link rel="icon" href="kooly.us.kg/material/icon.png" type="image/png">
+    <title>KOOLY官方文档</title>
     <style>
         #mbody {
             font-family: Arial, sans-serif;
@@ -24,7 +25,8 @@
         }
         .header {
             position: fixed;
-            font-size: clamp(10px, clamp(0px , 1vh, 100px), 50px);
+            font-size: clamp(0px , 1vh, 100px);
+            height: 4vh;
             background-color: #3b5998;
             color: white;
             padding: 0.5vh;
@@ -33,13 +35,14 @@
         }
 
         .sidebar {
+            top: calc(4vh + 0.5vh);
             width: clamp(50px, 30vw, 200px);
             background-color: #333;
             color: white;
             height: 100vh;
             position: fixed;
             overflow-y: auto;
-            top: 100px ;
+            top: 5.015625vh;
         }
 
         .sidebar a {
@@ -56,7 +59,7 @@
         .content {
             position: fixed;
             /* 固定位置 */
-            top: 100px;
+            top: 5.015625vh;
             /* 距离顶部0 */
             left:clamp(50px, 30vw, 200px);
             /* 距离左边30vw，与侧边栏宽度相同 */
@@ -70,7 +73,7 @@
             background-color: rgb(177, 177, 177);
         }
         .content p {
-            font-size: clamp(10px, 1.5vw, 40px);
+            font-size: clamp(20px, 1.5vw, 40px);
         }
 
         .footer {
@@ -148,15 +151,15 @@
     <div class="sidebar">
         <ul>
             <li><a href="#">首页</a></li>
-            <li><a href="#">小工具开发</a></li>
+            <li><a href="#">下载与使用</a></li>
+            <li><a href="#">小工具相关</a></li>
             <li><a href="#">配置文件</a></li>
             <li><a href="#">关于</a></li>
-            <li><a href="#">源代码</a></li>
         </ul>
     </div>
     <div class="content">
-        <h1 style="text-align: center;font-size: clamp(10px, 3vw, 80px);">欢迎来到 KOOLY 官方文档</h1>
-        <h3 style="color: rgb(255, 136, 0);font-size: clamp(10px, 1.5vw, 40px);">该文档匹配的Kooly版本：1.0.3</h3>
+        <h1 style="text-align: center;font-size: clamp(30px, 3vw, 80px);">欢迎来到 KOOLY 官方文档</h1>
+        <h3 style="color: rgb(255, 136, 0);font-size: clamp(20px, 1.5vw, 40px);">该文档匹配的Kooly版本：1.0.3</h3>
         <p>这里是一些关于如何使用KOOLY的示例和教程。你可以在这里查阅Kooly的相关信息，以便你使用和探索Kooly。</p>
         <!--<div class="container">
             <div class="code-box">
