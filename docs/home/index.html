@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOOLY 文档模仿</title>
     <style>
-        body {
+        #mbody {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            /*background-color: #3b5998;*/
         }
         .title {
             position: fixed; /* 固定位置 */
@@ -19,14 +19,14 @@
             left: 0; /* 距离左边0 */
             margin: 0; /* 移除默认的外边距 */
             padding: 10px; /* 添加一些内边距 */
-            background-color: #3b5998; /* 背景颜色 */
             color: white; /* 文字颜色 */
             z-index: 1000; /* 确保在最上层 */
         }
         .header {
+            font-size: clamp(10px, clamp(0px , 1vh, 100px), 50px);
             background-color: #3b5998;
             color: white;
-            padding: 20px;
+            padding: 0.5vh;
             text-align: center;
         }
 
@@ -37,7 +37,7 @@
             height: 100vh;
             position: fixed;
             overflow-y: auto;
-            top:130px ;
+            top:100px ;
         }
 
         .sidebar a {
@@ -54,7 +54,7 @@
         .content {
             position: fixed;
             /* 固定位置 */
-            top: 130px;
+            top: 100px;
             /* 距离顶部0 */
             left:clamp(50px, 30vw, 200px);
             /* 距离左边30vw，与侧边栏宽度相同 */
@@ -69,6 +69,7 @@
         }
 
         .footer {
+            font-size: clamp(5px, 1.5vh, 30px);
             background-color: #3b5998;
             color: white;
             text-align: center;
@@ -130,13 +131,13 @@
     </style>
 </head>
 
-<body>
-    <a href="https://kooly.us.kg/">
-        <span>
-            <h1 class='title'>Kooly</h1>
-        </span>
-    </a>
+<body id="mbody">
     <div class="header">
+        <a href="https://kooly.us.kg/">
+            <span>
+                <h1 class='title'>Kooly</h1>
+            </span>
+        </a>
         <h1>KOOLY 官方文档</h1>
     </div>
     <div class="sidebar">
