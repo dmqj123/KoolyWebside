@@ -25,7 +25,8 @@
         }
         .header {
             position: fixed;
-            font-size: clamp(10px, clamp(0px , 1vh, 100px), 50px);
+            font-size: clamp(0px , 1vh, 100px);
+            height: 4vh;
             background-color: #3b5998;
             color: white;
             padding: 0.5vh;
@@ -34,13 +35,14 @@
         }
 
         .sidebar {
+            top: calc(4vh + 0.5vh);
             width: clamp(50px, 30vw, 200px);
             background-color: #333;
             color: white;
             height: 100vh;
             position: fixed;
             overflow-y: auto;
-            top: 81px ;
+            top: 5.015625vh;
         }
 
         .sidebar a {
@@ -57,7 +59,7 @@
         .content {
             position: fixed;
             /* 固定位置 */
-            top: 81px;
+            top: 5.015625vh;
             /* 距离顶部0 */
             left:clamp(50px, 30vw, 200px);
             /* 距离左边30vw，与侧边栏宽度相同 */
