@@ -75,6 +75,16 @@
         .content p {
             font-size: clamp(20px, 1.5vw, 40px);
         }
+        .content img {
+            width: clamp(0px,100%,1000px);
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 3vw;
+        }
+        .content h2 {
+            font-size: clamp(5px, 2.5vw, 40px);
+        }
 
         .footer {
             font-size: clamp(5px, 1.5vh, 30px);
@@ -114,7 +124,7 @@
             position: relative;
             border: 1px solid #ccc;
             padding: 20px;
-            width: calc(33% - 20px);
+            width: clamp(0px, 100%, 1000px);
             box-sizing: border-box;
             overflow: hidden;
         }
@@ -160,7 +170,11 @@
     <div class="content">
         <h1 style="text-align: center;font-size: clamp(30px, 3vw, 80px);">关于配置文件</h1>
         <h3 style="color: rgb(255, 136, 0);font-size: clamp(20px, 1.5vw, 40px);">该文档匹配的Kooly版本：1.0.3</h3>
-        <p></p>
+        <p>Kooly会通过配置文件了解你的软件设置，你可以手动修改配置文件以更改设置。</p>
+        <p>配置文件位置：Kooly安装目录/deploy.ini</p>
+        <p>文件中，有各个对应的设置选项。</p>
+        <p>poss是开机自启动，size是大小，tool1~4是各个槽位工具的exp.ini相对exp文件夹的位置，icon是图片相对Kooly安装目录的位置。你可以自由更改它们，并在下次Kooly启动时被读取。</p>
+        <p style="color: red;">请注意，非必要情况请不要随意更改配置文件，否则可能出现错误。如果已出现错误，请通过“设置>其他>恢复默认”恢复。</p>
         <!--<div class="container">
             <div class="code-box">
                 <button class="copy-btn" onclick="copyCode(this)">复制</button>
