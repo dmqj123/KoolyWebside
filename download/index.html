@@ -37,27 +37,6 @@
             text-align: center;
         }
 
-        .download{
-            text-align: center;
-            font-family: 'Roboto', sans-serif; /* 使用Google Fonts中的Roboto字体 */
-            background-color: rgb(92, 181, 255); /* 背景颜色改为蓝色 */
-            color: black; 
-            padding: 15px 30px; /* 内边距 */
-            text-align: center; /* 文字居中 */
-            text-decoration: none; /* 去掉下划线 */
-            display: inline-block; /* 行内块元素 */
-            font-size: 5vh; /* 字体大小 */
-            margin: 4px 20px; /* 外边距 */
-            cursor: pointer; /* 鼠标悬停时显示手型 */
-            border-radius: 2.5vw;
-            transition: transform 0.3s ease; /* 添加过渡效果 */
-        }       
-        .download:hover {
-            transform: scale(1.6); /* 鼠标悬停时放大 */
-            background-color: rgb(92, 130, 255); /* 背景颜色改为蓝色 */
-            box-shadow: 5px 5px 2px 0px paleturquoise;
-        }
-
         .center-link {
             display: flex;
             justify-content: center;
@@ -65,7 +44,56 @@
             height: 1vh; /* 使内容垂直居中 */
             flex-direction: column;
         }
+        /* From Uiverse.io by BHARGAVPATEL1244 */ 
+        .dbutton {
+         outline: none;
+         cursor: pointer;
+         border: none;
+         font-family: inherit;
+         font-size: inherit;
+         position: relative;
+         display: inline-block;
+         letter-spacing: 0.6vw;
+         font-weight: 700;
+         font-size: clamp(10px,4vb,300px);
+         border-radius: 50vw;
+         overflow: hidden;
+         background: #4576ff;
+         color: ghostwhite;
+        }
 
+        .dbutton span {
+         position: relative;
+         z-index: 10;
+         transition: color 0.4s;
+        }
+
+        .dbutton:hover span {
+         color: black;
+        }
+
+        .dbutton::before,
+        .dbutton::after {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 0;
+        }
+
+        .dbutton::before {
+         content: "";
+         background: #000;
+         width: 120%;
+         left: -10%;
+         transform: skew(30deg);
+         transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+
+        .dbutton:hover::before {
+         transform: translate3d(100%, 0, 0);
+        }
         .vdlitem h2{
             font-size: 5vw;color:white;padding: 1vw;
         }
@@ -94,7 +122,6 @@
             top: 50%; /* 垂直居中 */
             transform: translateY(-50%); /* 调整垂直居中 */
         }
-
     </style>
 </head>
 <body style="background-color: rgb(107, 107, 107);">
@@ -106,8 +133,8 @@
         </a>
     </div>
     <h1 style="font-size: 6vh;color: azure;padding: 5vh;text-align: center;">下载Kooly</h1>
-    <div class="center-link">
-        <a class="download" href="https://api.kxzjoker.cn/API/lanzou.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiAqBR2n55eid&pwd=9k2n&type=down">下载最新版</a>
+    <div class="center-link"><!-- From Uiverse.io by vinodjangid07 --> 
+        <a href="https://api.kxzjoker.cn/API/lanzou.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiAqBR2n55eid&pwd=9k2n&type=down"><button class="dbutton" style="padding: 2vh 4vw"><span>下载最新版</span></button></a>
         <p style="font-size: 2vw;color:chocolate;">当前最新版本为1.0.3</p>
     </div>
 
@@ -117,6 +144,7 @@
     <div class="vdlitem">
         <h2>Kooly1.0.3 [最新]</h2>
         <a href="https://api.kxzjoker.cn/API/lanzou.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiAqBR2n55eid&pwd=9k2n&type=down">Kooly_Setup_Windows_1.0.3_x86_64</a>
+
         <br>
         <a href="https://wwyz.lanzoul.com/ieBQ42nvy0fg">Kooly_Zip_Windows_1.0.3_x86_64</a>
         <hr>
