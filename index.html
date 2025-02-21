@@ -59,27 +59,6 @@
             background-color: #45a049; /* 鼠标悬停时的背景颜色 */
         }
 
-
-        .download{
-            font-family: 'Roboto', sans-serif; /* 使用Google Fonts中的Roboto字体 */
-            background-color: rgb(92, 181, 255); /* 背景颜色改为蓝色 */
-            color: black; 
-            padding: 15px 30px; /* 内边距 */
-            text-align: center; /* 文字居中 */
-            text-decoration: none; /* 去掉下划线 */
-            display: inline-block; /* 行内块元素 */
-            font-size: 5vw; /* 字体大小 */
-            margin: 4px 20px; /* 外边距 */
-            cursor: pointer; /* 鼠标悬停时显示手型 */
-            border-radius: 2.5vw;
-            transition: transform 0.3s ease; /* 添加过渡效果 */
-        }       
-        .download:hover {
-            transform: scale(1.6); /* 鼠标悬停时放大 */
-            background-color: rgb(92, 130, 255); /* 背景颜色改为蓝色 */
-            box-shadow: 5px 5px 2px 0px paleturquoise;
-        }
-
         .menu_buttons {
             min-height: 35px;
             position: relative;
@@ -119,7 +98,6 @@
             color: white;
             margin-top: 100px;
             text-align: center;
-            padding: 12px;
             font-size: 400%;
             z-index: 2; /* 确保h1在顶层 */
         }
@@ -288,9 +266,16 @@
         <h1 style="font-size: 8vw;">
             专为你定制的
             <br>
-            <a class="download" href="https://api.kxzjoker.cn/API/lanzou.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiAqBR2n55eid&pwd=9k2n&type=down">下载</a>
+            <div style="display: flex; justify-content: center;">
+                <a href="https://api.kxzjoker.cn/API/lanzou.php?url=https%3A%2F%2Fwwyz.lanzoul.com%2FiAqBR2n55eid&pwd=9k2n&type=down">
+                    <button class="Btn">
+                        <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                        <span class="icon2"></span>
+                        <span class="tooltip">下载最新</span>
+                    </button>
+                </a>
+            </div>            
 
-            <br>
             智能桌面宠物
         </h1> 
         <img src="./material/icon.png" alt="kooly icon" style="width: 35vw;height: 35vw;">
