@@ -1,7 +1,7 @@
 /* From Uiverse.io by vinodjangid07 */ 
 .Btn {
-    width: 8vb;
-    height: 8vb;
+    width: 10vh;
+    height: 10vh;
     border: none;
     border-radius: 50%;
     background-color: rgb(27, 27, 27);
@@ -12,22 +12,22 @@
     cursor: pointer;
     position: relative;
     transition-duration: .3s;
-    box-shadow: 2vb 2vb 10vb rgba(0, 0, 0, 0.11);
+    box-shadow: 2vh 2vh 10vh rgba(0, 0, 0, 0.11);
     transition: transform 0.3s ease; /* 添加过渡效果 */
   }
   
   .svgIcon {
     fill: rgb(88, 180, 255);
-    width: 3vb;
-    height: 3vb;
+    width: 5vh;
+    height: 5vh;
   }
   
   .icon2 {
-    width: 18px;
-    height: 5px;
-    border-bottom: 2px solid rgb(56, 102, 187);
-    border-left: 2px solid rgb(56, 102, 187);
-    border-right: 2px solid rgb(56, 102, 187);
+    width: 3.6vh;
+    height: 1vh;
+    border-bottom: 0.5vh solid rgb(56, 102, 187);
+    border-left: 0.5vh solid rgb(56, 102, 187);
+    border-right: 0.5vh solid rgb(56, 102, 187);
   }
   
   .tooltip {
