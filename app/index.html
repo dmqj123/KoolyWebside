@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoolyApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #212529;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        main {
+            padding: 20px 0 60px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .how-it-works {
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .how-it-works ol {
+            max-width: 600px;
+            margin: 30px auto;
+            padding-left: 30px;
+        }
+        
+        .how-it-works li {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 60px 30px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta h2::after {
+            background: white;
+        }
+        
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn, .learn-more-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+        }
+        
+        .download-btn:hover {
+            background-color: #e5007d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 37, 133, 0.4);
+        }
+        
+        .learn-more-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .learn-more-btn:hover {
+            background-color: white;
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0 40px;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-item {
+                padding: 25px;
+            }
+            
+            .how-it-works {
+                padding: 30px;
+            }
+            
+            .cta {
+                padding: 40px 20px;
+            }
+            
+            .download-btn, .learn-more-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kooly - AI智能远程控制</h1>
+            <p class="subtitle">世界首创新一代AI远程控制应用，让远程操作更智能、更简单</p>
+        </header>
+
+        <main>
+            <section class="features">
+                <h2>核心特色</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>AI智能助手</h3>
+                        <p>通过自然语言对话，轻松控制您的电脑</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>局域网连接</h3>
+                        <p>安全稳定的局域网连接，保护您的数据安全</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>多功能控制</h3>
+                        <p>支持关机、文件传输、锁定等各种远程操作，Ai可以帮你完成一切，相当于MCP</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <h2>如何使用</h2>
+                <ol>
+                    <li>在电脑上下载<a href="https://kooly.faistudio.top/download">Kooly桌面宠物</a></li>
+                    <li>在手机上<a href="/app/download/">下载并安装Kooly应用</a></li>
+                    <li>查看<a href="https://kooly.faistudio.top/docs/app">详细教程</a></li>
+                </ol>
+            </section>
+
+            <section class="cta">
+                <h2>立即体验</h2>
+                <p>开启智能远程控制新时代</p>
+                <div class="buttons">
+                    <a href="/app/download/" class="download-btn">下载应用</a>
+                    <!-- <a href="/docs/app/" class="learn-more-btn">了解更多</a> -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 Kooly. 新一代远程控制解决方案</p>
+        </footer>
+    </div>
+</body>
+</html>

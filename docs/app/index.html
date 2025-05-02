@@ -75,16 +75,6 @@
         .content p {
             font-size: clamp(20px, 1.5vw, 40px);
         }
-        .content img {
-            width: clamp(0px,100%,1000px);
-            height: auto;
-            display: block;
-            margin: 10px auto;
-            border-radius: 3vw;
-        }
-        .content h2 {
-            font-size: clamp(5px, 2.5vw, 40px);
-        }
 
         .footer {
             font-size: clamp(5px, 1.5vh, 30px);
@@ -124,7 +114,7 @@
             position: relative;
             border: 1px solid #ccc;
             padding: 20px;
-            width: clamp(0px, 100%, 1000px);
+            width: calc(33% - 20px);
             box-sizing: border-box;
             overflow: hidden;
         }
@@ -169,85 +159,18 @@
         </ul>
     </div>
     <div class="content">
-        <h1 style="text-align: center;font-size: clamp(30px, 3vw, 80px);">关于小工具</h1>
+        <h1 style="text-align: center;font-size: clamp(30px, 3vw, 80px);">KoolyApp远程连接方式</h1>
         <h3 style="color: rgb(255, 136, 0);font-size: clamp(20px, 1.5vw, 40px);">该文档匹配的Kooly版本：2.1.0</h3>
-        <p>小工具其实就是通过Kooly快捷启动的程序，可以嵌入进Kooly使用。</p>
-        <p>你可以在“设置”中更改各个槽位的小工具。</p>
-        <p>你也可以通过点击槽位上小工具的图标快速启动小工具。</p>
-        <h2>获取小工具</h2>
-        <p>在小工具商城开放后，你可以在商城下载小工具。但目前，你只能通过其他途径获取小工具。当然，你也可以自己开发小工具</p>
-        <h2>添加或删除小工具</h2>
-        <p>在“设置”的小工具一栏，找到管理小工具，点击进入小工具管理界面，可以看到目前识别出来的小工具。</p>
-        <p>点击添加小工具，会自动打开小工具的文件夹。我们把要添加的小工具的文件夹拖进来，再进入小工具管理界面，点击刷新，看到新加的小工具即添加成功，此时可以将指定槽位的小工具替换为这个新的小工具。</p>
-        <p>删除也很简单，在小工具文件夹内，删除指定小工具的文件夹，即可删除小工具。</p>
-        <h2>开发小工具</h2>
-        <p>我们非常欢迎你自己开发想要的小工具，并在以后上架小工具商城。</p>
-        <p>其实我们只需要新建一个文件夹，里面放上你已经打包好的可执行文件和各种依赖文件，还要放上小工具的图标，再新建一个名为“exp.ini”的配置文件，编写配置文件就行了。</p>
-        <p>配置文件的编写：在第一行写上“program_path : ”加上可执行文件的名称，记得要加上英文的双引号；第二行写“icon_path : ”加上图标的文件名称，同样加双引号；第三行写“program_name : ”加上工具名称，同样加上双引号，并且要与文件夹名称相同。</p>
-        <p>示例文件：（exp.ini）(也可以参考内置小工具的)</p>
-        <div class="code-box">
-            <button class="copy-btn" onclick="copyCode(this)">复制</button>
-            <pre class="code-content">
-                program_path : "tool.exe"
-                icon_path : "icon.png"
-                program_name : "Tool"                
-            </pre>
-        </div>
-        <p>完成以上操作后，该文件夹就可以当成工具文件夹放进Kooly工具文件夹里，Kooly会自动扫描该工具。</p>
-        <!--<div class="container">
-            <div class="code-box">
-                <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                <pre class="code-content">
-          function helloWorld() {
-            console.log("Hello, World!");
-          }
-        </pre>
-            </div>
-            <div class="code-box">
-                <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                <pre class="code-content">
-          for (let i = 0; i < 10; i++) {
-            console.log(i);
-          }
-        </pre>
-            </div>
-            <div class="code-box">
-                <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                <pre class="code-content">
-        const sum = (a, b) => a + b;
-        console.log(sum(5, 3));
-        </pre>
-            </div>
-        </div>-->
-        <pre>
-            
+        
+        <p>要使用Kooly远程连接，你需要先在手机上下载<a href="https://kooly.faistudio.top/app/download/">KoolyApp</a>。</p>
 
+        <p>然后，确保手机和电脑在同一WiFi内，在手机的界面找到设备，点击连接，输入密码（如果无法搜索到，也可以直接点击上方加号手动输入ip）</p>
 
+        <p>然后进入聊天界面，就可以聊天了</p>
 
-
-
-
-
-            
-        </pre>
-    </div>
-   
     <div class="footer">
         <p>KOOLY 文档 2.1.0</p>
     </div>
-    <script>
-        function copyCode(button) {
-            const codeBox = button.parentElement;
-            const codeContent = codeBox.querySelector('.code-content').textContent;
-            const tempInput = document.createElement('textarea');
-            tempInput.value = codeContent;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            alert('代码已复制');
-        }
-    </script>
 </body>
 
 </html>
