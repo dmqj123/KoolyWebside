@@ -10,11 +10,11 @@
         <h1>KoolyApp 下载</h1>
         <div class="download-buttons">
             <button class="download-btn android">
-                <img src="https://developer.android.google.cn/images/lockups/android-stacked.svg" alt="Android图标">
+                <img src="https://developer.android.google.cn/images/lockups/android-stacked.svg" alt="Android">
                 Android 下载
             </button>
             <button class="download-btn ios" onclick="alert('暂未开放')">
-                <img src="https://p1.ssl.qhmsg.com/t01ea1add6878b00345.jpg" alt="iOS图标">
+                <img src="https://p1.ssl.qhmsg.com/t01ea1add6878b00345.jpg" alt="iOS">
                 iOS 下载
             </button>
         </div>
@@ -116,15 +116,24 @@
             newInfo.id = 'downloadInfo';
             newInfo.className = 'download-info';
             newInfo.innerHTML = `
+                <strong>下载链接：</strong>
                 <div style="color: #333; margin-bottom: 10px;">
-                    <strong>下载链接：</strong>
+                   
+                    <h2>蓝奏云：</h2>
                     <a href="https://wwyz.lanzoul.com/i4JHf2v3c4oh" target="_blank" style="color: #2196F3;">
                         https://wwyz.lanzoul.com/i4JHf3c4oh
                     </a>
                 </div>
                 <div style="color: #666;">
-                    <strong>密码：</strong>
+                    <strong>提取码：</strong>
                     <span style="user-select: text;">fowk</span>
+                </div>
+                <div style="color: #333; margin-bottom: 10px;">
+                   
+                    <h2>夸克网盘：</h2>
+                    <a href="https://pan.quark.cn/s/ee7f2d953ac4" target="_blank" style="color: #2196F3;">
+                        https://pan.quark.cn/s/ee7f2d953ac4
+                    </a>
                 </div>
             `;
             document.querySelector('.download-buttons').insertAdjacentElement('afterend', newInfo);
